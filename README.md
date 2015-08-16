@@ -3,6 +3,8 @@
 
 This is a domain-specific example of using TinyLearn module for matching (classifying) time-series data, which includes both spatial and temporal components. 
 
+The following ML algorithms are used according to the best practices for time-series classification tasks:
+
 1. KNN-DTW: K-Nearest Neighbors with Dynamic Time Warping
 2. HMM: Hidden Markov Model
 
