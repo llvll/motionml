@@ -19,6 +19,8 @@ The project includes a demo application for human action recognition by using th
 
 Classification is done according to the test data with location, acceleration and timestamp components. Such data can be collected using any smartphone device with GPS and accelerometer/gyroscope on board. 
 
+IPython Notebook (.ipynb file) is included for step-by-step execution of the demo application with extra comments.
+
 This code is using TinyLearn framework, which simplifies the classification tasks with Python and the following modules:
 
 * Scikit-Learn
