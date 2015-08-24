@@ -40,6 +40,7 @@ using an alternative approach with histograms and CommonClassifier from TinyLear
 
 from tinylearn import KnnDtwClassifier
 from tinylearn import CommonClassifier
+import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import os
@@ -77,6 +78,16 @@ def load_data():
                 test_data_raw.append(td)
                 test_data_hist.append(np.histogram(td, bins=20)[0])
 
+# Let's plot several selected histograms for the train data
+def plot_histograms():
+    for i in range (0, 35, 5):
+        hist, bins = np.histogram(train_data_raw[i], bins=20)
+        width = 0.7 * (bins[1] - bins[0])
+        center = (bins[:-1] + bins[1:]) / 2
+        plt.title(train_labels[i])
+        plt.bar(center, hist, align='center', width=width)
+        plt.show() 
+
 # Demonstration of KnnDtwClassifier and CommonClassifier for motion pattern recognition
 def demo_classifiers():
     # Raw sequence labeling with KnnDtwClassifier and KNN=1
@@ -112,4 +123,5 @@ def demo_classifiers():
 
 if __name__ == "__main__":
     load_data()
+    plot_histograms()
     demo_classifiers()
