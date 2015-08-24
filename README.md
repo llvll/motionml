@@ -15,8 +15,6 @@ The following motion patterns are included into this demo:
 
 The accelerometer data is based on the following public dataset from UCI: https://archive.ics.uci.edu/ml/datasets/Dataset+for+ADL+Recognition+with+Wrist-worn+Accelerometer
 
-This IP[y] Notebook performs a step-by-step execution of *'motion_rec_demo.py'* file with extra comments. 
-
 Dynamic Time Warping (DTW) and K-Nearest Neighbors (KNN) algorithms for machine learning are used
 to demonstrate labeling of the varying-length sequences with accelerometer data. Such algorithms can be applied to time series classification or other cases, which require matching / training sequences with unequal lengths.
 
