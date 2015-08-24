@@ -1,23 +1,28 @@
-# stclassify
-### Spatio-temporal classification framework based on KNN-DTW and HMM
+# motionml
+### Motion pattern recognition using KNN-DTW and classifiers from TinyLearn
 
-This is a domain-specific example of using TinyLearn module for matching (classifying) time-series data, which includes both spatial and temporal components. 
+This is a domain-specific example of using TinyLearn module for recognizing (classifying) the motion patterns according to the supplied accelerometer data. 
 
-The following ML algorithms are used according to the best practices for time-series classification tasks:
-
-1. KNN-DTW: K-Nearest Neighbors with Dynamic Time Warping
-2. HMM: Hidden Markov Model
-
-The project includes a demo application for human action recognition by using the supervised machine learning and pattern matching. The following spatio-temporal patterns (labels) have been provided for the demonstration purposes:
+The following motion patterns are included into this demo:
 
 * Walking
-* Running
-* Staying
-* Sleeping
-* Eating (inside kitchen)
-* Smoking (inside smoking room)
+* Sitting down on a chair
+* Getting up from a bed
+* Drinking a glass
+* Descending stairs
+* Combing hair
+* Brushing teeth
 
-Classification is done according to the test data with location, acceleration and timestamp components. Such data can be collected using any smartphone device with GPS and accelerometer/gyroscope on board. 
+The accelerometer data is based on the following public dataset from UCI: https://archive.ics.uci.edu/ml/datasets/Dataset+for+ADL+Recognition+with+Wrist-worn+Accelerometer
+
+Dynamic Time Warping (DTW) and K-Nearest Neighbors (KNN) algorithms for machine learning are used
+to demonstrate labeling of the varying-length sequences with accelerometer data. Such algorithms can be applied to time series classification or other cases, which require matching / training sequences with unequal lengths.
+
+Scikit-Learn doesn't have any DTW implementations, so a custom class has been implemented (KnnDtwClassifier)
+as a part of TinyLearn module.
+
+DTW is slow by default, taking into account its quadratic complexity, that's why we're speeding up the classification
+using an alternative approach with histograms and CommonClassifier from TinyLearn.
 
 IPython Notebook (.ipynb file) is included for step-by-step execution of the demo application with extra comments.
 
@@ -25,8 +30,7 @@ This code is using TinyLearn framework, which simplifies the classification task
 
 * Scikit-Learn
 * Pandas
-* Seqlearn
 * OpenCV
-* Mlpy
+* Other libraries, like FastDTW 
 
 TinyLearn framework is still at an early development stage. Please use with caution and feel free to ask any questions: oleg.v.puzanov@gmail.com
