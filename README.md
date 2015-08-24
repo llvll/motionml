@@ -1,4 +1,4 @@
-# motionml
+# MotionML
 ### Motion pattern recognition using KNN-DTW and classifiers from TinyLearn
 
 This is a domain-specific example of using TinyLearn module for recognizing (classifying) the motion patterns according to the supplied accelerometer data. 
